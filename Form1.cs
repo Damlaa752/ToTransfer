@@ -20,17 +20,40 @@ namespace ToTransfer
         private void btnDonustur_Click(object sender, EventArgs e)
         {
             string text = rchSQL.Text;
-            foreach (char harf in text)
+            //foreach (char harf in text)
                 //{
                 //    switch (switch_on)
                 //    {
                 //        default:
                 //    }
-                if (true)
+                if (text.StartsWith("LG"))
                 {
+                    int spaceIndex = text.IndexOf(' ');
+                    string segment = spaceIndex > 0 ? text.Substring(0, spaceIndex) : text;
 
+                    //en son "_" karakterinin bulunduğu yerden sonrasını al 
+                    int lastUnderscoreIndex= segment.LastIndexOf('_');
+                    if (lastUnderscoreIndex >= 0 && lastUnderscoreIndex + 1 < segment.Length)
+                    {
+                        string beforeLastUnderscore = segment.Substring(0, lastUnderscoreIndex + 1);
+                        string afterLastUnderscore = segment.Substring(lastUnderscoreIndex + 1);
+
+                        // Güncellenmiş satırı oluştur
+                        string updatedLine = beforeLastUnderscore + $"{{{afterLastUnderscore}}}";
+
+                        // Güncellenmiş metni RichTextBox'a yazdır
+                        rchTransfer.Text = updatedLine;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Metin LG ile başlıyor ama '_' karakteri bulunamadı veya sonrası yok.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            else
+                {
+                    MessageBox.Show("Metin LG ile başlamıyor.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
     }
-}
+
