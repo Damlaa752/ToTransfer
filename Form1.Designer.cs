@@ -39,14 +39,14 @@
             // 
             this.rchSQL.Location = new System.Drawing.Point(14, 61);
             this.rchSQL.Name = "rchSQL";
-            this.rchSQL.Size = new System.Drawing.Size(728, 120);
+            this.rchSQL.Size = new System.Drawing.Size(891, 791);
             this.rchSQL.TabIndex = 0;
             this.rchSQL.Text = "";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 25);
+            this.label1.Location = new System.Drawing.Point(12, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(126, 20);
             this.label1.TabIndex = 1;
@@ -55,7 +55,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 303);
+            this.label2.Location = new System.Drawing.Point(966, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 20);
             this.label2.TabIndex = 2;
@@ -63,15 +63,15 @@
             // 
             // rchTransfer
             // 
-            this.rchTransfer.Location = new System.Drawing.Point(14, 336);
+            this.rchTransfer.Location = new System.Drawing.Point(961, 58);
             this.rchTransfer.Name = "rchTransfer";
-            this.rchTransfer.Size = new System.Drawing.Size(728, 139);
+            this.rchTransfer.Size = new System.Drawing.Size(871, 794);
             this.rchTransfer.TabIndex = 3;
             this.rchTransfer.Text = "";
             // 
             // btnDonustur
             // 
-            this.btnDonustur.Location = new System.Drawing.Point(584, 212);
+            this.btnDonustur.Location = new System.Drawing.Point(721, 896);
             this.btnDonustur.Name = "btnDonustur";
             this.btnDonustur.Size = new System.Drawing.Size(158, 52);
             this.btnDonustur.TabIndex = 4;
@@ -83,7 +83,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(787, 518);
+            this.ClientSize = new System.Drawing.Size(1865, 989);
             this.Controls.Add(this.btnDonustur);
             this.Controls.Add(this.rchTransfer);
             this.Controls.Add(this.label2);

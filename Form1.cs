@@ -27,14 +27,29 @@ namespace ToTransfer
             {
                 if (words[i].StartsWith("LG"))
                 {
-                    string lgWord = words[i];
+                    string lgWord = words[i].TrimEnd();
+                    
                    
                     int lastUnderscoreIndex = lgWord.LastIndexOf('_');
                     if (lastUnderscoreIndex>=0 && lastUnderscoreIndex+1 <lgWord.Length)
                     {
-                        string afterLasUnderscore = lgWord.Substring(lastUnderscoreIndex+1);
+                        string afterLastUnderscore = lgWord.Substring(lastUnderscoreIndex+1);
                         //lgWord=lgWord.Substring(0, lastUnderscoreIndex+1)+$"{{{afterLasUnderscore}}}";
-                        words[i]=$"{{{afterLasUnderscore}}}";
+                        char[] invalidChars = {')', '*', '/','[','?',']','-','+'};
+                        if (!string.IsNullOrEmpty(afterLastUnderscore))
+                        {
+                            char lastChar = afterLastUnderscore[afterLastUnderscore.Length-1];
+                            if (Array.Exists(invalidChars, c => c == lastChar))
+                            {
+                                string result = afterLastUnderscore.Substring(0, afterLastUnderscore.Length - 1);
+                                words[i]=$"{{{result}}}{lastChar}";
+                            }
+                            else
+                            {
+                                words[i]=$"{{{afterLastUnderscore}}}";
+                            }
+                        }
+                        
                     }
                 }
             }
