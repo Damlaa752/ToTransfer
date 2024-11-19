@@ -20,39 +20,25 @@ namespace ToTransfer
         private void btnDonustur_Click(object sender, EventArgs e)
         {
             string text = rchSQL.Text;
-            //foreach (char harf in text)
-                //{
-                //    switch (switch_on)
-                //    {
-                //        default:
-                //    }
-                if (text.StartsWith("LG"))
+            
+           
+            string[] words = text.Split(' ');
+            for (int i = 0; i < words.Length; i++)
+            {
+                if (words[i].StartsWith("LG"))
                 {
-                    int spaceIndex = text.IndexOf(' ');
-                    string segment = spaceIndex > 0 ? text.Substring(0, spaceIndex) : text;
-
-                    //en son "_" karakterinin bulunduğu yerden sonrasını al 
-                    int lastUnderscoreIndex= segment.LastIndexOf('_');
-                    if (lastUnderscoreIndex >= 0 && lastUnderscoreIndex + 1 < segment.Length)
+                    string lgWord = words[i];
+                   
+                    int lastUnderscoreIndex = lgWord.LastIndexOf('_');
+                    if (lastUnderscoreIndex>=0 && lastUnderscoreIndex+1 <lgWord.Length)
                     {
-                        string beforeLastUnderscore = segment.Substring(0, lastUnderscoreIndex + 1);
-                        string afterLastUnderscore = segment.Substring(lastUnderscoreIndex + 1);
-
-                        // Güncellenmiş satırı oluştur
-                        string updatedLine = beforeLastUnderscore + $"{{{afterLastUnderscore}}}";
-
-                        // Güncellenmiş metni RichTextBox'a yazdır
-                        rchTransfer.Text = updatedLine;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Metin LG ile başlıyor ama '_' karakteri bulunamadı veya sonrası yok.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        string afterLasUnderscore = lgWord.Substring(lastUnderscoreIndex+1);
+                        //lgWord=lgWord.Substring(0, lastUnderscoreIndex+1)+$"{{{afterLasUnderscore}}}";
+                        words[i]=$"{{{afterLasUnderscore}}}";
                     }
                 }
-            else
-                {
-                    MessageBox.Show("Metin LG ile başlamıyor.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+            }
+            rchTransfer.Text=string.Join(" ", words);
             }
         }
     }

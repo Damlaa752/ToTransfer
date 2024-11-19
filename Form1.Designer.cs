@@ -33,7 +33,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.rchTransfer = new System.Windows.Forms.RichTextBox();
             this.btnDonustur = new System.Windows.Forms.Button();
-            this.listBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // rchSQL
@@ -80,28 +79,18 @@
             this.btnDonustur.UseVisualStyleBackColor = true;
             this.btnDonustur.Click += new System.EventHandler(this.btnDonustur_Click);
             // 
-            // listBox
-            // 
-            this.listBox.FormattingEnabled = true;
-            this.listBox.ItemHeight = 20;
-            this.listBox.Location = new System.Drawing.Point(809, 61);
-            this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(811, 404);
-            this.listBox.TabIndex = 5;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1652, 518);
-            this.Controls.Add(this.listBox);
+            this.ClientSize = new System.Drawing.Size(787, 518);
             this.Controls.Add(this.btnDonustur);
             this.Controls.Add(this.rchTransfer);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rchSQL);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "BTİ SQL KOD DÜZENLEYİCİ";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -114,7 +103,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RichTextBox rchTransfer;
         private System.Windows.Forms.Button btnDonustur;
-        private System.Windows.Forms.ListBox listBox;
     }
 }
 
